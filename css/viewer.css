@@ -1,0 +1,417 @@
+/* one CSS file for custom styles we need for poster viewer */
+
+
+/* fonts */
+
+/* Call as 'font-family: beehiveserif' */
+@font-face {
+  font-family: 'beehiveserif';
+  src: url('../fonts/beehiveserif-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/beehiveserif-webfont.woff') format('woff'),
+    url('../fonts/beehiveserif-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* we're also loading Cardo from Google Fonts in html */
+
+/* Euphorigenic font by Typodermic Fonts, All Rights Reserved.
+Courtesy of Typodermic Fonts and Fontspring:
+http://www.fontspring.com/fonts/typodermic/euphorigenic */
+@font-face {
+    font-family: 'Euphorigenic';
+    src: url('../fonts/euphorigenic.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/euphorigenic.woff') format('woff'),
+         url('../fonts/euphorigenic.ttf') format('truetype'),
+         url('../fonts/euphorigenic.svg#EuphorigenicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1, h2 {
+  font-family: Euphorigenic, Times New Roman, Times, serif;
+  font-size: 24px;
+  font-weight: normal;
+  margin-top: 0;
+  padding-top: 0;
+}
+h3 {
+  font-family: Euphorigenic, Times New Roman, Times, serif;
+  font-size: 24px;
+  font-weight: normal;
+  margin-bottom: 0.5em;
+}
+h4 {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-family: Euphorigenic, Times New Roman, Times, serif;
+  font-weight: normal;
+  font-size: 18px;
+}
+.controls-text-nav {
+  font-family: beehiveserif, Euphorigenic, Times New Roman, Times, serif;
+  font-size: 20px;
+}
+.controls-text-nav.bottom {
+  margin-top: 1em;
+}
+.controls-prev-next {
+  float: right;
+}
+.nav-prev-icon, .nav-next-icon, .scene-expander-icon {
+  /* nudge */
+  position: relative;
+  top: -1px;
+}
+
+.scene-expander {
+  display: block; /* just to increase it's clickable area */
+}
+
+.controlsText p {
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, .controls-text-nav a, .story-list a {
+  text-decoration: none;
+  font-weight: normal;
+}
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, .controls-text-nav a:hover, .story-list a:hover {
+  text-decoration: underline;
+}
+
+ul.story-list {
+  margin-top: 6px;
+  margin-bottom: 6px;
+
+  font-family: beehiveserif, Euphorigenic, Times New Roman, Times, serif;
+  font-size: 20px;
+
+  padding-left: 0;
+  list-style: none
+}
+ul.story-list a {
+  display: block; /* so we can hover all the way to the end */
+}
+ul.story-list li {
+  text-indent: -0.66em;
+  padding-left: 0.66em;
+  margin-bottom: 3px;
+}
+
+
+
+html, body{
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+
+  font-size: 100%;
+}
+
+.content, #openseadragon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+
+  /* in some browsers, in full screen mode we get a black background
+     without this. Future TODO, customize bg color? Will take more than this. */
+  background-color: white;
+}
+
+/* our own nav controls, easier than trying to customize
+   OpenSeadragon's */
+#navControls {
+  border: none;
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: inline-block;
+  background: none transparent;
+  opacity: 1;
+}
+
+#navControls .hexagon {
+  display:inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+#zoomInBtn {
+  /* hack to make sure our hover image gets preloaded first */
+  background-image:url(../images/plus_brown_px_07.png);
+  background-image:url(../images/plus_blue_07.png);
+}
+#zoomInBtn:hover {
+  background-image:url(../images/plus_brown_px_07.png);
+}
+#zoomOutBtn {
+  background-image:url(../images/minus_brown_07.png);
+  background-image:url(../images/minus_blue_07.png);
+  position: relative;
+  top:29px;
+  left:-25px;
+}
+#zoomOutBtn:hover {
+  background-image:url(../images/minus_brown_07.png);
+}
+#fullPosterBtn {
+  background-image:url(../images/fullview_brown_07.png);
+  background-image:url(../images/fullview_blue_07.png);
+  position: relative;
+  left:-50px;
+}
+#fullPosterBtn:hover {
+  background-image:url(../images/fullview_brown_07.png);
+}
+#fullPageBtn {
+  background-image:url(../images/fullscreen_brown_07.png);
+  background-image:url(../images/fullscreen_blue_07.png);
+  position: relative;
+  top:28px;
+  left:-75px;
+}
+#fullPageBtn:hover {
+  background-image:url(../images/fullscreen_brown_07.png);
+}
+#makePermaLink {
+  background-image:url(../images/link_brown_07.png);
+  background-image:url(../images/link_blue_07.png);
+  position: relative;
+  left:-98px;
+}
+#makePermaLink:hover {
+  background-image:url(../images/link_brown_07.png);
+}
+#showControlsBtn {
+  background-image:url(../images/menu_brown_07.png);
+  background-image:url(../images/menu_blue_07.png);
+  position: relative;
+  top:28px;
+  left:-122px;
+}
+#showControlsBtn:hover {
+  background-image:url(../images/menu_brown_07.png);
+}
+
+
+
+/*******************
+ * Overlay control panel
+ *
+ ******************/
+
+#overlayControls {
+  /* position below and lined up with openseadragon controls for now */
+  position: absolute;
+  top: 78px;
+  left: 6px;
+  margin-bottom: 38px;
+  margin-right: 6px;
+
+  border: 1px solid black;
+  width: 342px;
+
+  background-color: #FAFAFA;
+  /* This is just approximate height limiting, we need JS to
+     to do it right */
+  max-height: 90%;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+  -webkit-border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+}
+
+
+.controlsMinimize {
+  float: right;
+  margin-left: 1em;
+}
+
+.tiny-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.controlsSection {
+  padding: 6px 18px 6px 18px;
+  overflow-y: auto;
+}
+.controlsSection:empty {
+  display: none;
+}
+
+
+.controlsHeader {
+  padding-top: 10px;
+}
+.controls-header-label {
+  display: inline;
+  margin: 0;
+}
+
+.controls-story-list-expander {
+  border-top: 1px solid black;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+  -webkit-border-image: url(../images/single-bar.png) 5 0 0 0 repeat;
+  border-image: url(../images/single-bar.png) 5 0 0 0 repeat;
+
+}
+.controls-story-list-expander h3 {
+  margin: 0;
+}
+
+.controls-slide-container {
+  position: relative;  
+}
+
+/* used to dim the story when the scene list is open */
+#slideContainerOverlay {
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0.8;
+  filter:alpha(opacity=80); /* for IE <= 8 */
+  background-color: black;
+}
+
+.controls-story-list {
+  position: absolute;
+  top: 0;
+
+  border: 1px solid #000;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  -webkit-border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+  border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+
+
+  /* have to leave space for our new border now, grr */
+  left: -2px;
+  right: -2px;
+
+  padding-top: 0; /* makes the slide look better */
+
+  border-top: none;
+  background-color: #FAFAFA;
+}
+
+
+.controlsText {
+  border-top: 1px solid black;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  -webkit-border-image: url(../images/single-bar.png) 5 100 0 0 repeat;
+  border-image: url(../images/single-bar.png) 5 100 0 0 repeat;    
+
+
+  padding-top: 14px;
+
+  font-family: Cardo, Georgia, Times New Roman, Times, serif;  
+  font-size: 95%;
+}
+
+/* full-screen tip that sometimes shows within first scene */
+.full-screen-instruction a {
+  font-weight: normal;
+  text-decoration: none;
+}
+.full-screen-instruction a:hover {
+  text-decoration: underline;
+}
+.full-screen-instruction img {
+  float: left;
+  margin-right: 1em;
+}
+
+
+#storyHeading {
+  margin-top: 0;
+}
+.close-story-link {
+  float: right;
+  margin-left: 1em;
+}
+
+
+
+/*******************
+ *
+ * Modal popup for permalink display
+ *
+ ******************/
+
+#linkModal {
+  padding: 18px;
+
+  width: 80%;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  -webkit-border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+  border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;
+
+  background-color: #FAFAFA;
+}
+#linkModal h1, #linkModal h2, #linkModal h3 {
+  font-family: beehiveserif;
+}
+
+#linkModal input[type=text] {
+  display: block;
+  line-height: 30px;
+  padding-left: 6px;
+  padding-right: 6px;
+
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  -webkit-border-image: url('../images/single-frame.gif') 5 5 5 5 repeat; 
+  border-image: url('../images/single-frame.gif') 5 5 5 5 repeat;  
+
+  font-family: courier, fixed;
+}
+
+
+/* button to toggle annotation mode, which we aren't really using */
+#map-annotate-button {
+  position:absolute;
+  top:3px;
+  right:3px;
+  background-color:#000;
+  color:#fff;
+  padding:3px 8px;
+  z-index:10000;
+  font-size:11px;
+  text-decoration:none;
+
+  /*display: none;*/
+}
